@@ -51,6 +51,7 @@ Plug 'isundil/vim-irssi-syntax', { 'for' : 'irssi'}
 Plug 'digitaltoad/vim-jade', { 'for' : 'jade'}
 Plug 'elzr/vim-json', { 'for' : ['javascript','json']}
 Plug 'zyedidia/julialint.vim', {'for' : 'julia'}
+Plug 'tie/llvm.vim', { 'for' : 'llvm' }
 Plug 'tbastos/vim-lua', {'for' : 'lua'}
 Plug 'SpaceVim/vim-luacomplete', {'for' : 'lua'}
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
