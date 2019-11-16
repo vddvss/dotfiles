@@ -7,17 +7,22 @@
  */
 
 #include <stdio.h>
+#include <string.h>
 
 int main(int argc, const char **argv)
 {
 	const char *str;
+	size_t i, len;
 
 	if (argc != 2) {
 		fprintf(stderr, "invalid arguments\n");
 		return 1;
 	}
 
-	switch (argv[1][0]) {
+	len = strlen(argv[1]);
+
+	for (i = 0; i < len; i++) {
+		switch (argv[1][i]) {
 		case '*':
 			str = "*";
 			break;
@@ -42,9 +47,10 @@ int main(int argc, const char **argv)
 		default:
 			fprintf(stderr, "invalid character\n");
 			return 1;
-	}
+		}
 
-	printf("%s", str);
+		printf("%s", str);
+	}
 
 	return 0;
 }
