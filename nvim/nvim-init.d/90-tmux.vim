@@ -1,2 +1,2 @@
-autocmd BufEnter * let &titlestring = ' - ' . expand("%:t")
+"autocmd BufEnter * let &titlestring = ' - ' . expand("%:t")
 

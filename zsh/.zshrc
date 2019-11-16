@@ -77,6 +77,7 @@ alias dnfinst="sudo dnf install"
 alias dnfs="dnf -C search"
 alias dnfi="dnf -C info"
 alias dnfrq="dnf -C repoquery"
+alias dnfwp="dnf -C repoquery --whatprovides"
 alias chmx="chmod +x"
 alias gopen="xdg-open"
 alias java11="$HOME/.local/java/jdk-11/bin/java"
@@ -85,4 +86,6 @@ alias java8="$HOME/.local/java/jdk-8/bin/java"
 alias java8-scaled="env GDK_SCALE=2 $HOME/.local/java/jdk-8/bin/java"
 alias ping5="ping -c 5"
 alias ls='lsd --color=always --icon-theme=fancy --icon=always'
+
+_git-format-patch-chrome() { _git-format-patch; }
 

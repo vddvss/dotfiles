@@ -46,7 +46,7 @@ Plug 'tenfyzhong/CompleteParameter.vim'
 
 Plug 'kchmck/vim-coffee-script', { 'for' : 'coffee'}
 Plug 'elixir-lang/vim-elixir', { 'for' : 'elixir'}
-Plug 'Valloric/MatchTagAlways', { 'for' : ['html' , 'xhtml' , 'xml' , 'jinja']}
+"Plug 'Valloric/MatchTagAlways', { 'for' : ['html' , 'xhtml' , 'xml' , 'jinja']}
 Plug 'isundil/vim-irssi-syntax', { 'for' : 'irssi'}
 Plug 'digitaltoad/vim-jade', { 'for' : 'jade'}
 Plug 'elzr/vim-json', { 'for' : ['javascript','json']}
@@ -70,6 +70,7 @@ Plug 'vhda/verilog_systemverilog.vim', {'for' : ['verilog', 'systemverilog', 've
 Plug 'vimperator/vimperator.vim', { 'for' : 'vimperator'}
 Plug 'amal-khailtash/vim-xdc-syntax', {'for' : 'xdc'}
 Plug 'chrisbra/vim-zsh', {'for' : 'zsh'}
+Plug 'vim-scripts/Vim-SELinux-suite', {'for' : 'selinux'}
 
 call plug#end()
 
