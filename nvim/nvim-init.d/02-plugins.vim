@@ -71,6 +71,7 @@ Plug 'vimperator/vimperator.vim', { 'for' : 'vimperator'}
 Plug 'amal-khailtash/vim-xdc-syntax', {'for' : 'xdc'}
 Plug 'chrisbra/vim-zsh', {'for' : 'zsh'}
 Plug 'vim-scripts/Vim-SELinux-suite', {'for' : 'selinux'}
+Plug 'https://gn.googlesource.com/gn', { 'rtp': 'misc/vim' }
 
 call plug#end()
 

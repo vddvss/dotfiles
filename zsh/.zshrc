@@ -14,40 +14,36 @@ ZPLGM[BIN_DIR]="$HOME/.local/src/zplugin"
 ZPLGM[HOME_DIR]="$HOME/.local/etc/zsh/zplugin"
 ZPLGM[COMPINIT_OPTS]=-C
 
+fpath+=( $HOME/.local/src/depot_tools/zsh-goodies )
 source "${ZPLGM[BIN_DIR]}/zplugin.zsh"
 
-module_path+=( "${ZPLGM[BIN_DIR]}/zmodules/Src" )
+module_path+=( "$HOME/.local/src/zplugin/zmodules/Src" )
 zmodload zdharma/zplugin
 
-zplugin ice nocompletions
-zplugin snippet OMZ::lib/directories.zsh
-zplugin ice nocompletions
-zplugin snippet OMZ::lib/git.zsh
+zinit nocompletions for \
+    OMZ::lib/directories.zsh \
+    OMZ::lib/git.zsh
 
 zplugin ice blockf
 zplugin snippet OMZ::lib/completion.zsh
-zplugin snippet OMZ::lib/grep.zsh
-zplugin snippet OMZ::lib/functions.zsh
-zplugin snippet OMZ::lib/history.zsh
-zplugin snippet OMZ::lib/key-bindings.zsh
-zplugin snippet OMZ::lib/misc.zsh
-zplugin snippet OMZ::lib/prompt_info_functions.zsh
-zplugin snippet OMZ::lib/spectrum.zsh
-zplugin snippet OMZ::lib/theme-and-appearance.zsh
 
-zplugin snippet OMZ::plugins/colorize/colorize.plugin.zsh
-zplugin snippet OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh
-zplugin snippet OMZ::plugins/git/git.plugin.zsh
-zplugin snippet OMZ::plugins/svn-fast-info/svn-fast-info.plugin.zsh
-zplugin snippet OMZ::plugins/command-not-found/command-not-found.plugin.zsh
+zinit for \
+    OMZ::lib/grep.zsh \
+    OMZ::lib/functions.zsh \
+    OMZ::lib/history.zsh \
+    OMZ::lib/key-bindings.zsh \
+    OMZ::lib/misc.zsh \
+    OMZ::lib/prompt_info_functions.zsh \
+    OMZ::lib/spectrum.zsh \
+    OMZ::lib/theme-and-appearance.zsh \
+    OMZ::plugins/colorize/colorize.plugin.zsh \
+    OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \
+    OMZ::plugins/svn-fast-info/svn-fast-info.plugin.zsh \
+    OMZ::plugins/command-not-found/command-not-found.plugin.zsh \
+    OMZ::plugins/git/git.plugin.zsh
 
 zplugin ice blockf
 zplugin light zsh-users/zsh-completions
-
-zplugin ice wait"0" lucid
-zplugin light zdharma/zui
-zplugin ice wait"1" lucid
-zplugin light zdharma/zplugin-crasis
 
 zplugin ice wait'!2' atload'_zsh_autosuggest_start' lucid
 zplugin light zsh-users/zsh-autosuggestions
@@ -58,6 +54,11 @@ zplugin light zdharma/fast-syntax-highlighting
 setopt promptsubst
 zplugin snippet OMZ::themes/gallois.zsh-theme
 
+for f in $HOME/.local/etc/zsh/zsh-completions.d/_* ; do
+    zplugin ice as"completion"
+    zplugin snippet $f
+done
+unset f
 autoload -Uz +X bashcompinit && bashcompinit -C
 
 export EDITOR=nvim
